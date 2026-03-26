@@ -5,7 +5,21 @@ package org.example;
 
 public class HelloApp {
     public static void main(String[] args) {
-        String name = (args.length > 0) ? args[0] : "World";
-        System.out.println("Hello " + name);
+
+        if (args.length == 0) {
+            System.out.println("Hello World");
+        } else {
+            StringBuilder names = new StringBuilder();
+
+            for (int i = 0; i < args.length; i++) {
+                names.append(args[i]);
+
+                if (i < args.length - 1) {
+                    names.append(", ");
+                }
+            }
+
+            System.out.println("Hello " + names);
+        }
     }
 }
